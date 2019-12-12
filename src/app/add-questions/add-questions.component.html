@@ -1,0 +1,54 @@
+
+<mat-card >
+    <mat-card-header>
+            <mat-card-title>Add Questions</mat-card-title>
+            <mat-card-subtitle>JAVA</mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+        <div class="form-group ">
+        <form [formGroup]="myForm">
+        
+            <div formArrayName="questionsArray">
+                <div *ngFor="let questionsInput of questionForms.controls; let i = index " [formGroupName]=i>
+
+                    <mat-form-field>
+                        <input matInput placeholder="Question" formControlName = "questionContent" >
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Option A" formControlName ="optionA" >
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Option B" formControlName ="optionB" >
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Option C" formControlName ="optionC" >
+                    </mat-form-field>
+                    <mat-form-field>    
+                        <input matInput placeholder="Option D" formControlName ="optionD" >  
+                    </mat-form-field>
+                    <mat-form-field> 
+                        <mat-label>Correct Answer </mat-label>
+                        <mat-select formControlName="answer">
+                            <mat-option value ="optionA">Option A</mat-option>
+                            <mat-option value ="optionB">Option B</mat-option>
+                            <mat-option value ="optionC">Option C</mat-option>
+                            <mat-option value ="optionD">Option D</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    
+                    <button  mat-raised-button color="primary" (click)="saveQuestion(i)"> Save</button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+            <button mat-raised-button color="Accent" (click)="addQuestionInput()" >Add</button>
+            <button mat-raised-button color="warn" (click)="deletePhone(i)"> Remove</button>
+            <button mat-raised-button color="primary" (click)="saveAllQuestions()" >Save All</button>  
+     </mat-card-actions>
+</mat-card>
+

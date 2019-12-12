@@ -1,0 +1,9 @@
+.mat-card-content{
+    text-align: center
+}
+.mat-form-field{
+    padding-right: 10px;
+}
+.green-snackbar{
+    background-color: green;
+}

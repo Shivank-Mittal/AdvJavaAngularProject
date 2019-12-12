@@ -1,0 +1,34 @@
+<mat-toolbar color="warn" >
+        <mat-toolbar-row>
+                <span>Edit Question</span>
+        </mat-toolbar-row>
+</mat-toolbar>
+
+
+<div>
+<mat-card >
+        <mat-card-header>
+                
+                <mat-card-subtitle>JAVA</mat-card-subtitle>
+        </mat-card-header>
+        <br>
+        <form [formGroup]="UpdateFormGroup" (ngSubmit)="onSubmit()">
+        <mat-card-content>
+                <div class="form-group ">
+                
+                    <mat-form-field>
+                         <input matInput placeholder="ID" formControlName = "id"  color="accent">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Question" formControlName = "content" color="accent" >
+                    </mat-form-field>
+                
+                </div>
+            </mat-card-content> 
+            <mat-card-actions>
+                    <button mat-raised-button  color="accent" type ="submit"  [mat-dialog-close]="true" >Submit</button>  
+             </mat-card-actions>
+        </form>
+             {{content}}
+</mat-card>
+</div>

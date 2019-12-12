@@ -1,0 +1,22 @@
+<mat-toolbar class="toolbar" color="primary" >
+    <span> Quizzzy  </span>
+    <span ><mat-icon> sports_cricket</mat-icon>
+        <mat-icon> mood</mat-icon>
+    </span>
+</mat-toolbar>
+<div>
+<mat-tab-group [backgroundColor]="'primary'" [color]="'warn'" mat-align-tabs="center" [(selectedIndex)]="index" (selectedTabChange)="questionList.updateDataSource()">
+    <mat-tab label= "Add Questions">
+        <div class="questions align">
+            <app-add-questions></app-add-questions>
+        </div>
+    </mat-tab>
+    <mat-tab label ="Questions List">
+        <div class="questions align">
+             <app-question-list #questionList></app-question-list>
+        </div>
+    </mat-tab>
+</mat-tab-group>
+
+
+
